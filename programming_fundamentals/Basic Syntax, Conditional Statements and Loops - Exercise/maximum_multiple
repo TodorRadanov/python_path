@@ -1,0 +1,8 @@
+divisor = int(input())
+boundary_number = int(input())
+max_multiplier_number = 0
+for number in range(boundary_number, divisor, -1):
+    if number % divisor == 0:
+        max_multiplier_number = number
+        break
+print(max_multiplier_number)
