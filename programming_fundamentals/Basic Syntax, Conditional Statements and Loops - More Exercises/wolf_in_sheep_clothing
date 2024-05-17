@@ -1,0 +1,10 @@
+single_string = input()
+list_animals = single_string.split(", ")
+counter = len(list_animals)
+for word in list_animals:
+    counter -= 1
+    if word == "wolf":
+        if counter == 0:
+            print("Please go away and stop eating my sheep")
+        else:
+            print(f"Oi! Sheep number {counter}! You are about to be eaten by a wolf!")
