@@ -1,0 +1,7 @@
+text = input()
+lower = text.lower()
+list_words = ["sand", "water", "fish", "sun"]
+counter = 0
+for word in list_words:
+    counter += (lower.count(word))
+print(counter)
