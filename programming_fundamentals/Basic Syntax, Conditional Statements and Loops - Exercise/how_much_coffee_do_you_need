@@ -1,0 +1,14 @@
+command = ""
+coffee = 0
+while command.lower() != 'end':
+    command = input()
+    if command.lower() == "movie" or command.lower() == "cat" or \
+            command.lower() == "dog" or command.lower() == "coding":
+        if command.islower():
+            coffee += 1
+        elif command.isupper():  # else
+            coffee += 2
+if coffee > 5:
+    print('You need extra sleep')
+else:
+    print(coffee)
