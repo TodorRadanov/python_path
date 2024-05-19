@@ -1,0 +1,7 @@
+n = int(input())
+for h in range(n):
+	comment = input()
+	listed = [comment[c] for c in range(len(comment))]
+	name = ''.join(listed[listed.index('@')+1:listed.index('|')])
+	age = int(''.join(listed[listed.index('#')+1:listed.index('*')]))
+	print(f"{name} is {age} years old.")
