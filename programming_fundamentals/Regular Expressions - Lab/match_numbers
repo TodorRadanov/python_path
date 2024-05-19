@@ -1,0 +1,4 @@
+import re
+pattern = r'(^|(?<=\s))-?\d+(\.\d+)?($|(?=\s))'
+nums = re.finditer(pattern, input())
+print(*[c.group() for c in nums])
