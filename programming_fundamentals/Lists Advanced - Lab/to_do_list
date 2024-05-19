@@ -1,0 +1,11 @@
+do_list = list()
+result = list()
+input_line = input()
+while input_line != "End":
+    note = input_line.split("-")
+    result.append(int(note[0]))
+    result.sort()
+    idx = result.index(int(note[0]))
+    do_list.insert(idx, note[-1])
+    input_line = input()
+print(do_list)
