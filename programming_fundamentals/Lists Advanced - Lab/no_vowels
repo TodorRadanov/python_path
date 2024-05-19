@@ -1,0 +1,4 @@
+lst_vowels = ['a', 'o', 'u', 'e', 'i']
+word = input()
+lst_letters = [letter for letter in word if letter.lower() not in lst_vowels]
+print(''.join(lst_letters))
