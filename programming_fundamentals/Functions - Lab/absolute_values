@@ -1,0 +1,7 @@
+lst_numbers = input().split(" ")
+new_list = list()
+# new_list = []
+for i in lst_numbers:
+    number = abs(float(i))
+    new_list.append(number)
+print(new_list)
