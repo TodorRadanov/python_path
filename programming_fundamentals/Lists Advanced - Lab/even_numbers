@@ -1,0 +1,6 @@
+lst_number = [int(num) for num in input().split(", ")]
+lst_even = list()
+for index, digit in enumerate(lst_number):
+    if digit % 2 == 0:
+        lst_even.append(index)
+print(lst_even)
