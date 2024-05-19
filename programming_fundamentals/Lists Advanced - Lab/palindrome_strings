@@ -1,0 +1,7 @@
+lst_words = [word for word in input().split(" ")]
+palin_word = input()
+lst_new_words = list()
+for word in lst_words:
+    if word == word[::-1]:
+        lst_new_words.append(word)
+print(lst_new_words, f"\nFound palindrome {lst_new_words.count(palin_word)} times")
