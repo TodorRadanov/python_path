@@ -1,0 +1,19 @@
+items = input()
+dwarfs = {}
+colors = {}
+while items != "Once upon a time":
+    name, color, physics = items.split(" <:> ")
+    physics = int(physics)
+    idi = f'{name}:{color}'
+    if idi not in dwarfs:
+        if color not in colors:
+            colors[color] = 1
+        else:
+            colors[color] += 1
+        dwarfs[idi] = [0, color]
+    dwarfs[idi][0] = max([dwarfs[idi][0], physics])
+    items = input()
+
+for key, value in sorted(dwarfs.items(), key=lambda x: (-x[1][0], -colors[x[1][1]])):
+    name, color = key.split(":")
+    print(f"({color}) {name} <-> {value[0]}")
