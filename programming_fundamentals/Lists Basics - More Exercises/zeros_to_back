@@ -1,0 +1,10 @@
+lst_numbers = input().split(", ")
+for number in lst_numbers:
+    if int(number) == 0:
+        lst_numbers.remove(number)
+        lst_numbers.append(number)
+# print([int(num) for num in lst_numbers])
+lst_ints_num = []
+for num in lst_numbers:
+    lst_ints_num.append(int(num))
+print(lst_ints_num)
