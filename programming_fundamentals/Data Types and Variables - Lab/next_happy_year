@@ -1,0 +1,22 @@
+year = int(input())
+next_happy_year = year + 1
+while True:
+    is_found = False
+    next_happy_year = str(next_happy_year)
+    for digit in next_happy_year:
+        count = 0
+        for num in next_happy_year:
+            if num == digit:
+                count += 1
+            if count > 1:
+                break
+        if count > 1:
+            break
+    else:
+        is_found = True
+    if is_found:
+        print(next_happy_year)
+        break
+    else:
+        next_happy_year = int(next_happy_year)
+        next_happy_year += 1
