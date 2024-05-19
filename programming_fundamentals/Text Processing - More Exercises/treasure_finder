@@ -1,0 +1,17 @@
+array = [int(c) for c in input().split()]
+command = input()
+while command != 'find':
+	index = 0
+	result = ''
+	for c in range(len(command)):
+		if index == len(array):
+			index = 0
+		result += f'{chr(ord(command[c]) - array[index])}'
+
+		index += 1
+	final = [c for c in result]
+
+	material = final[final.index('&')+1:final.index('&', final.index('&')+1)]
+	coordinate = final[final.index('<')+1:final.index('>')]
+	print(f'Found {"".join(material)} at {"".join(coordinate)}')
+	command = input()
