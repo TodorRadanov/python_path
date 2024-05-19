@@ -1,0 +1,12 @@
+num = int(input())
+lst_pos = []
+lst_neg = []
+for i in range(num):
+    number = int(input())
+    if number < 0:
+        lst_neg.append(number)
+    else:
+        lst_pos.append(number)
+print(lst_pos)
+print(lst_neg)
+print(f'Count of positives: {len(lst_pos)}\nSum of negatives: {sum(lst_neg)}')
