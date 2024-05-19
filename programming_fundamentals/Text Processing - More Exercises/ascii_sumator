@@ -1,0 +1,9 @@
+start = input()
+end = input()
+string = input()
+sum_ = 0
+for char in string:
+	if ord(start) + 1 <= ord(char) <= ord(end) - 1:
+		sum_ += ord(char)
+
+print(sum_)
