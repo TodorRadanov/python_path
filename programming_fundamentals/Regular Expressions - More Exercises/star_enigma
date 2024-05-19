@@ -1,0 +1,23 @@
+import re
+attacked = {}
+destroyed = {}
+pattern = r'@(?P<planet>[A-Z][a-z]+)([^@!:>-]?)+:(?P<population>\d+)([^@!:>-]?)+!(?P<attack_type>[AD])!([^@!:>-]?)+->(?P<soldier_count>\d+)'
+times = int(input())
+key_l = ['s','t','a','r']
+for c in range(times):
+	massage = input()
+	count = len([c for c in massage if c.lower() in key_l])
+	new_massage = ''.join([f'{chr(ord(c) - count)}' for c in massage])
+	i = re.finditer(pattern, new_massage)
+	for t in i:
+		b = t.groupdict()
+		if b['attack_type'] == 'A':
+			attacked[b['planet']] = b['planet']
+		else:
+			destroyed[b['planet']] = b['planet']
+print(f'Attacked planets: {len(attacked)}')
+for key, value in sorted(attacked.items(), key=lambda x: x[0]):
+	print(f'-> {key}')
+print(f'Destroyed planets: {len(destroyed)}')
+for key, value in sorted(destroyed.items(), key=lambda y: y[0]):
+	print(f'-> {key}')
