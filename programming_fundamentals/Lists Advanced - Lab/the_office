@@ -1,0 +1,9 @@
+employees = [int(person) for person in input().split(" ")]
+factor = int(input())
+employees = list(map(lambda x: x * factor, employees))
+average_happiness = sum(employees) / len(employees)
+new_list = list(filter(lambda y: y >= average_happiness, employees))
+if len(employees) / len(new_list) <= 2:
+    print(f"Score: {len(new_list)}/{len(employees)}. Employees are happy!")
+else:
+    print(f"Score: {len(new_list)}/{len(employees)}. Employees are not happy!")
