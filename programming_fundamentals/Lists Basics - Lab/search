@@ -1,0 +1,11 @@
+number = int(input())
+word = input()
+lst_words = []
+for i in range(number):
+    text = input()
+    lst_words.append(text)
+print(lst_words)
+for j in range(len(lst_words) - 1, -1, -1):
+    if word not in lst_words[j]:
+        lst_words.remove(lst_words[j])
+print(lst_words)
