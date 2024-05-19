@@ -1,0 +1,39 @@
+def add_(dict_, color_, name_, dmg_, hp_, armor_):
+	if dmg_ == "null" or hp_ == "null" or armor_ == "null":
+		if dmg_ == "null":
+			dmg_ = 45
+		if hp_ == "null":
+			hp_ = 250
+		if armor_ == "null":
+			armor_ = 10
+
+	dmg_ = int(dmg_)
+	armor_ = int(armor_)
+	hp_ = int(hp_)
+
+	if color_ in dict_:
+		dict_[color_][name_] = [dmg_, hp_, armor_]
+	else:
+		dict_[color_] = {name_: [dmg_, hp_, armor_]}
+
+	return dict_
+
+our_dict = {}
+average_dict = {}
+n = int(input())
+for time in range(n):
+	command = input()
+	color, name, dmg, hp, armor = command.split()
+	our_dict = add_(our_dict, color, name, dmg, hp, armor)
+
+for colors, name_and_items in our_dict.items():
+	average_dict[colors] = [0, 0, 0]
+	for name, items in name_and_items.items():
+		for index in range(len(items)):
+			average_dict[colors][index] += int(our_dict[colors][name][index])
+	average_dict[colors] = [f'{(average_dict[colors][0] / len(our_dict[colors])):.2f}', f'{(average_dict[colors][1] / len(our_dict[colors])):.2f}', f'{(average_dict[colors][2] / len(our_dict[colors])):.2f}']
+
+for color, massive in average_dict.items():
+	print(f'{color}::({massive[0]}/{massive[1]}/{massive[2]})')
+	for name, massive2 in sorted(our_dict[color].items(), key=lambda x: x[0]):
+		print(f'-{name} -> damage: {massive2[0]}, health: {massive2[1]}, armor: {massive2[2]}')
