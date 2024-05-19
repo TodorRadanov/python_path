@@ -1,0 +1,9 @@
+number = int(input())
+capacity = 0
+for i in range(0, number):
+    liters = int(input())
+    if capacity + liters <= 255:
+        capacity += liters
+    else:
+        print("Insufficient capacity!")
+print(capacity)
