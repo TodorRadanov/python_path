@@ -1,0 +1,3 @@
+lst_numbers = input().split(" ")
+lst_numbers = map(float, lst_numbers)
+print(list(map(lambda x: round(x), lst_numbers)))
